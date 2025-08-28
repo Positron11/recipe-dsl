@@ -18,6 +18,13 @@ Documentation for implementation design choices.
 
 - Use `modifiers` field or "..." comment as a cop-out for representation we haven't strictly figured out yet
 
+## Challenges (Playground)
+
+- Name `Action` instances accordng to their PPC output
+- Used LLMs as much as possible to generate challenge solutions, as a sort of "proof of concept" for development of automated pipeline
+
 ## To-Do
 
 - Data validation
+- lexicon construction and instance loader 
+- DSL compiler
