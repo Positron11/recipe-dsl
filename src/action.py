@@ -28,11 +28,12 @@ class Process(Action):
 
 @dataclass(frozen=True, slots=True)
 class Transfer(Action):
-	modifiers: Optional[str] = None
-	# ...
+	destination:Environment|ActionID
+	
+	modifiers:Optional[str]=None
 	
 
 @dataclass(frozen=True, slots=True)
 class Plate(Action):
-	description: str
+	description:str
 	# ...
