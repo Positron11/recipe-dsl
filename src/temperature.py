@@ -16,7 +16,7 @@ class RampTemperature(Temperature):
 	end:  float
 	curve:Optional[Callable] = linear
 
-	def value(self, completed:float):
+	def value(self, completed:float) -> float:
 		return self.curve(self.start, self.end, completed)
 
 
