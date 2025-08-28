@@ -8,7 +8,7 @@ from .utils.id import ActionID
 @dataclass(frozen=True, slots=True)
 class Timing:
 	unit: StandardUnit=field(default=StandardUnit.TIME, init=False)
-	value:float
+	value:float # values < 1 interpreted as fractionally relative, >= 1 interpreted in std. time units
 
 	relative_to:Optional[ActionID]=None
 	blocking:   bool=False
