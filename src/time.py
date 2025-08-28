@@ -7,9 +7,9 @@ from .utils.id import ActionID
 
 @dataclass(frozen=True, slots=True)
 class Timing:
-	unit: StandardUnit = field(default=StandardUnit.TIME, init=False)
-	value: float
+	unit: StandardUnit=field(default=StandardUnit.TIME, init=False)
+	value:float
 
-	relative_to: Optional[ActionID] = None
-	blocking:    bool = False
-	repeating:   bool = False
+	relative_to:Optional[ActionID]=None
+	blocking:   bool=False
+	repeating:  bool=False

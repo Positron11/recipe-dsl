@@ -7,14 +7,14 @@ from .curves import linear
 
 @dataclass(frozen=True, slots=True)
 class Temperature:
-	unit: StandardUnit = field(default=StandardUnit.TEMPERATURE, init=False)
+	unit:StandardUnit=field(default=StandardUnit.TEMPERATURE, init=False)
 
 
 @dataclass(frozen=True, slots=True)
 class RampTemperature(Temperature):
-	start: float
-	end:   float
-	curve: Optional[Callable] = linear
+	start:float
+	end:  float
+	curve:Optional[Callable] = linear
 
 	def value(self, completed:float):
 		return self.curve(self.start, self.end, completed)
@@ -22,4 +22,4 @@ class RampTemperature(Temperature):
 
 @dataclass(frozen=True, slots=True)
 class StaticTemperature(Temperature):
-	value: float
+	value:float

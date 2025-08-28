@@ -14,7 +14,7 @@ Documentation for implementation design choices.
 
 ### Recipe DSL Entities
 
-- Define `uid` field for all entities that will be explicitly extracted into the graph
+- Define `_uid` field for all entities that will be explicitly extracted into the graph
 
 - Use `modifiers` field or "..." comment as a cop-out for representation we haven't strictly figured out yet
 

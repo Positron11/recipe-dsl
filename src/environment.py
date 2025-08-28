@@ -1,14 +1,12 @@
 from dataclasses import dataclass, field
 from typing import Optional
 
-from .utils.id import id_field, EnvironmentID, ContainerID, LocationID
+from .utils.id import id_field, CanonicalContainerID, CanonicalLocationID
 
 
 @dataclass(frozen=True, slots=True)
 class Environment:
-	uid: EnvironmentID = id_field(EnvironmentID)
-
-	location:  LocationID
-	container: Optional[ContainerID] = None
+	location: Optional[CanonicalLocationID]=None
+	container:Optional[CanonicalContainerID]=None
 	
-	modifiers:  tuple[str, ...] = field(default_factory=tuple)
+	modifiers:tuple[str, ...]=field(default_factory=tuple)

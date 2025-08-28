@@ -2,40 +2,40 @@ from dataclasses import dataclass, field
 from typing import Optional, Mapping
 from types import MappingProxyType
 
-from .utils.id import id_field, ToolID, LocationID, ContainerID, CanonicalIngredientID, CanonicalTechniqueID
+from .utils.id import id_field, CanonicalToolID, CanonicalLocationID, CanonicalContainerID, CanonicalIngredientID, CanonicalTechniqueID
 from .units import StandardUnit
 
 
 @dataclass(frozen=True, slots=True)
-class Tool:
-    uid: ToolID = id_field(ToolID)
+class CanonicalTool:
+    _uid:CanonicalToolID=id_field(CanonicalToolID)
 
-    name:     str
-    material: Optional[str] = None
+    name:    str
+    material:Optional[str]=None
     # ...
 
 
 @dataclass(frozen=True, slots=True)
-class Location:
-    uid: LocationID = id_field(LocationID)
-
-    name:     str
+class CanonicalLocation:
+    _uid:CanonicalLocationID=id_field(CanonicalLocationID)
+    
+    name:str
     # ...
 
 
 @dataclass(frozen=True, slots=True)
-class Container:
-    uid: ContainerID = id_field(ContainerID)
+class CanonicalContainer:
+    _uid:CanonicalContainerID=id_field(CanonicalContainerID)
 
-    name:     str
-    material: Optional[str] = None
-    volume:   Optional[float] = None
+    name:    str
+    material:Optional[str]=None
+    volume:  Optional[float]=None
     # ...
 
 
 @dataclass(frozen=True, slots=True)
 class CanonicalIngredient:
-    uid: CanonicalIngredientID = id_field(CanonicalIngredientID)
+    _uid:CanonicalIngredientID=id_field(CanonicalIngredientID)
 
     name: str
     # ...
@@ -43,16 +43,16 @@ class CanonicalIngredient:
 
 @dataclass(frozen=True, slots=True)
 class ParamSpec:
-    default: Optional[any] = None
-    unit:    Optional[StandardUnit] = None
-    bounds:  Optional[tuple] = None
+    default:Optional[any]=None
+    unit:   Optional[StandardUnit]=None
+    bounds: Optional[tuple]=None
 
 
 @dataclass(frozen=True, slots=True)
 class CanonicalTechnique:
-    uid: CanonicalTechniqueID = id_field(CanonicalTechniqueID)
+    _uid:CanonicalTechniqueID=id_field(CanonicalTechniqueID)
 
-    name:       str
-    static:     tuple[str]
-    parameters: Mapping[str, ParamSpec] = field(default_factory=lambda: MappingProxyType({}))
+    name:      str
+    static:    tuple[str]
+    parameters:Mapping[str, ParamSpec]=field(default_factory=lambda: MappingProxyType({}))
     # ...
