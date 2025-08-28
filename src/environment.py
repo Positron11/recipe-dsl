@@ -1,16 +1,12 @@
 from dataclasses import dataclass, field
-from typing import Optional, NewType
+from typing import Optional
 
-from .utils.uid import uid_field
-from .lexicon import ContainerID, LocationID
-
-
-EnvironmentID = NewType("EnvironmentID", str)
+from .utils.id import id_field, EnvironmentID, ContainerID, LocationID
 
 
 @dataclass(frozen=True, slots=True)
 class Environment:
-	uid: EnvironmentID = uid_field(EnvironmentID)
+	uid: EnvironmentID = id_field(EnvironmentID)
 
 	location:  LocationID
 	container: Optional[ContainerID] = None

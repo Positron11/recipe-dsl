@@ -1,20 +1,14 @@
 from dataclasses import dataclass, field
-from typing import Optional, NewType
-from nanoid import generate
+from typing import Optional
 
-from .utils.uid import uid_field
-from .lexicon import ToolID, CanonicalTechniqueID
-from .ingredient import IngredientID
+from .utils.id import id_field, ActionID, ToolID, CanonicalTechniqueID, IngredientID
 from .temperature import Temperature
 from .time import Timing
 
 
-ActionID = NewType("ActionID", str)
-
-
 @dataclass(frozen=True, slots=True)
 class Action:
-	uid: ActionID = uid_field(ActionID)
+	uid: ActionID = id_field(ActionID)
 	  
 	inputs: tuple[IngredientID|ActionID]
 

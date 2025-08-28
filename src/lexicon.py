@@ -1,20 +1,14 @@
 from dataclasses import dataclass, field
-from typing import Optional, NewType, Mapping
+from typing import Optional, Mapping
+from types import MappingProxyType
 
-from .utils.uid import uid_field
+from .utils.id import id_field, ToolID, LocationID, ContainerID, CanonicalIngredientID, CanonicalTechniqueID
 from .units import StandardUnit
-
-
-ToolID                = NewType("ToolID", str)
-LocationID            = NewType("LocationID", str)
-ContainerID           = NewType("ContainerID", str)
-CanonicalIngredientID = NewType("CanonicalIngredientID", str)
-CanonicalTechniqueID  = NewType("CanonicalTechniqueID", str)
 
 
 @dataclass(frozen=True, slots=True)
 class Tool:
-    uid: ToolID = uid_field(ToolID)
+    uid: ToolID = id_field(ToolID)
 
     name:     str
     material: Optional[str] = None
@@ -23,7 +17,7 @@ class Tool:
 
 @dataclass(frozen=True, slots=True)
 class Location:
-    uid: LocationID = uid_field(LocationID)
+    uid: LocationID = id_field(LocationID)
 
     name:     str
     # ...
@@ -31,7 +25,7 @@ class Location:
 
 @dataclass(frozen=True, slots=True)
 class Container:
-    uid: ContainerID = uid_field(ContainerID)
+    uid: ContainerID = id_field(ContainerID)
 
     name:     str
     material: Optional[str] = None
@@ -41,7 +35,7 @@ class Container:
 
 @dataclass(frozen=True, slots=True)
 class CanonicalIngredient:
-    uid: CanonicalIngredientID = uid_field(CanonicalIngredientID)
+    uid: CanonicalIngredientID = id_field(CanonicalIngredientID)
 
     name: str
     # ...
@@ -56,7 +50,7 @@ class ParamSpec:
 
 @dataclass(frozen=True, slots=True)
 class CanonicalTechnique:
-    uid: CanonicalTechniqueID = uid_field(CanonicalTechniqueID)
+    uid: CanonicalTechniqueID = id_field(CanonicalTechniqueID)
 
     name:       str
     static:     tuple[str]

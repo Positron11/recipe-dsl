@@ -1,17 +1,13 @@
 from dataclasses import dataclass, field
-from typing import Optional, NewType
+from typing import Optional
 
-from .utils.uid import uid_field
+from .utils.id import id_field, IngredientID, CanonicalIngredientID
 from .units import StandardUnit
-from .lexicon import CanonicalIngredientID
-
-
-IngredientID = NewType("IngredientID", str)
 
 
 @dataclass(frozen=True, slots=True)
 class Ingredient:
-	uid: IngredientID = uid_field(IngredientID)
+	uid: IngredientID = id_field(IngredientID)
 	
 	ingredient:	CanonicalIngredientID
 	quantity: 	float
