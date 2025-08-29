@@ -11,3 +11,7 @@ A dependency graph of milestones serving as a rationale behind the development a
 ## MMFood '25
 
 The `docs/papers/mmfood/` directory contains the LaTeX source for the short paper submitted to and accepted for the [MMFood ’25](https://mm-food.github.io/2025/) workshop at the ACM Multimedia (MM) Conference. The DOI reference (once plublished) is: [https://doi.org/10.1145/3746264.3760499](https://doi.org/10.1145/3746264.3760499)
+
+## Reference
+
+Comprehensive API and usage documentation for the DSL lives in `docs/reference/`:
