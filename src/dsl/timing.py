@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 from .units import StandardUnit
-from .utils.id import ActionID
+from .identifiers import ActionID
 
 
 @dataclass(frozen=True, slots=True)

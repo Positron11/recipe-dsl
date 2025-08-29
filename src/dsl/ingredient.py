@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Optional
 
-from .utils.id import id_field, CanonicalIngredientID
+from .identifiers import id_field, CanonicalIngredientID
 from .units import StandardUnit
 
 

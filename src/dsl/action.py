@@ -1,11 +1,11 @@
 from dataclasses import dataclass, field
 from typing import Optional
 
-from .utils.id import id_field, ActionID, CanonicalToolID, CanonicalTechniqueID
+from .identifiers import id_field, ActionID, CanonicalToolID, CanonicalTechniqueID
 from .environment import Environment
 from .ingredient import Ingredient
 from .temperature import Temperature
-from .time import Timing
+from .timing import Timing
 
 
 @dataclass(frozen=True, slots=True)

@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from typing import Optional, Mapping
 from types import MappingProxyType
 
-from .utils.id import id_field, CanonicalToolID, CanonicalLocationID, CanonicalContainerID, CanonicalIngredientID, CanonicalTechniqueID
+from .identifiers import id_field, CanonicalToolID, CanonicalLocationID, CanonicalContainerID, CanonicalIngredientID, CanonicalTechniqueID
 from .units import StandardUnit
 
 
