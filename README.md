@@ -14,4 +14,4 @@ The `docs/papers/mmfood/` directory contains the LaTeX source for the short pape
 
 ## Reference
 
-Comprehensive API and usage documentation for the DSL lives in `docs/reference/`:
+Comprehensive API and usage documentation for the DSL lives in `docs/reference/`.
